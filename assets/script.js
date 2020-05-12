@@ -1,3 +1,5 @@
+
+
 var city = "";
 
 $( "#btnSearch" ).click(function() {
@@ -6,10 +8,9 @@ getWeather()
 });
 
 function getWeather(){
-
     var apiKey = "6a13c0be5285df65c709a8ea0f1f8378";
-  
-    var URI = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
+    // var URI2 = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
+    var URI = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}`;
 
     $.ajax({
       url: URI,

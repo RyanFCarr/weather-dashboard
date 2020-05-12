@@ -8,24 +8,27 @@
         <title>Weather-Dashboard</title>
     </head>
     <body style="background-image: url('./assets/noise-bg.png');background-repeat: repeat;">
-        <div class="container">
-            <div id="header"> 
-                <h1 class="fixed-top bg-dark text-light text-center pb-3">Weather Dashboard</h1>
-            </div>
-            <h5 class="card-title mt-5 pt-3 ml-0">Search for a city:</h5> 
-            <div class="input-group">
-                <input type="text" id="form-search">
-                <button id="btnSearch" class="btn btn btn-primary" type="button">Search</button>
-                </input>
-            </div>
-        </div>
-            <!--footer-->
-            <div class="card row fixed-bottom bg-dark border-top border-secondary border-bottom-0"
-                style="border-width: 5px !important;">
-                <div class="card-body text-center">
-                    <span class="text-white-50">Ryan F. Carr<br>&copy;Copyright 2020-2021</span>
+        <!--container-->       
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col">
+                    <h1 class="fixed-top bg-dark text-light text-center pb-3">Weather Dashboard</h1>
                 </div>
             </div>
+            <div class="row">
+                <div class="col mt-5 pt-4">
+                    <h5 class="card-title">Search for a City:</h5>
+                    <input type="text" id="form-search">
+                    <button id="btnSearch" class="btn btn-primary" type="button">Search</button>   
+                </div>
+            </div>
+            <!--footer-->
+            <div class="card row fixed-bottom bg-dark border-top border-secondary border-bottom-0" style="border-width: 5px !important;">
+                <div class="card-body text-center">
+                    <span class="text-white-50">Ryan F. Carr | Fullstack Developer<br>&copy;Copyright 2020-2021</span>
+                </div>
+            </div>    
+        </div>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
         <script src="./assets/script.js"></script>
