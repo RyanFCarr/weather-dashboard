@@ -1,46 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
-        <title>Weather-Dashboard</title>
-    </head>
-    <body style="background-image: url('./assets/noise-bg.png');background-repeat: repeat;">
-        <!--container-->       
-        <div class="container-fluid">
-            <div class="row bg-dark text-light text-center ">
-                <div class="col">
-                    <h1 class="py-2">Weather Dashboard</h1>
-                </div>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+    <title>Weather-Dashboard</title>
+</head>
+
+<body style="
+            background-image: url('./assets/noise-bg.png');
+            background-repeat: repeat;
+        ">
+    <!--container-->
+    <div class="container-fluid">
+        <div class="row bg-dark text-light text-center">
+            <div class="col">
+                <h1 class="py-2">Weather Dashboard</h1>
             </div>
-            <div id="searchBox"class="row mt-2">
-                <div class="col ">
-                    <h5 class="card-title">Search for a City:</h5>
-                    <form id="search-form">
-                    <input type="text" id="form-search">
-                    <button id="btnSearch" class="btn btn-primary" type="submit">Search</button>
-                    </form>    
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-2 mt-2">
-                    <ul id="history" class="list-group">
-                    </ul>
-                </div> 
-            </div>
-            <div id="current-forecast" class="current"></div>
-            <div id="weekly-forecast" class="weekly"></div>
-            <!--footer-->
-            <div class="card row fixed-bottom bg-dark border-top border-secondary border-bottom-0" style="border-width: 5px !important;">
-                <div class="card-body text-center">
-                    <span class="text-white-50">Ryan F. Carr | Fullstack Developer<br>&copy;Copyright 2020-2021</span>
-                </div>
-            </div>    
         </div>
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-        <script src="./assets/script.js"></script>
-    </body>
+        <div id="searchBox" class="row mt-2">
+
+                    <div class="col-3 mt-2">
+                        <h5 class="card-title">Search for a City:</h5>
+                        <form id="search-form">
+                            <input type="text" id="form-search" />
+                            <button id="btnSearch" class="btn btn-primary" type="submit">Search</button>
+                        </form>
+                        <ul id="history" class="list-group pt-3"></ul>
+                    </div>
+                    <div class="col-9">
+                        <div class="card row">
+                            <div class="col">
+                                <h1 class="display-4">Charlotte</h1>
+                                <p class="lead">Temperature</p>
+                                <p class="lead">Wind</p>
+                                <p class="lead">Humidity</p>
+                            </div>
+                        </div>
+                        <div class="row pt-2">
+                            <div class="col-12">
+                                <div class="row">
+                                    <h5>Five Day Forecast:</h5>
+                                </div>
+                                <div class="row">
+                                    <div class="card col-2 mr-3">fgdfhdhd</div>
+                                    <div class="card col-2 mr-3">fgdfhdhd</div>
+                                    <div class="card col-2 mr-3">fgdfhdhd</div>
+                                    <div class="card col-2 mr-3">fgdfhdhd</div>
+                                    <div class="card col-2 mr-3">fgdfhdhd</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        </div>
+        <!--footer-->
+        <div class="card row fixed-bottom bg-dark border-top border-secondary border-bottom-0"
+            style="border-width: 5px !important;">
+            <div class="card-body text-center">
+                <span class="text-white-50">Ryan F. Carr | Fullstack Developer<br />&copy;Copyright
+                    2020-2021</span>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./assets/script.js"></script>
+</body>
+
 </html>

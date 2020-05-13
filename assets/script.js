@@ -20,6 +20,7 @@ function getForecast(){
   }).then(function(response) {
 
     var weeklyForecast = $("#weekly-forecast")
+    response.list[0].dt_txt;
     render();
   });
 }
@@ -27,7 +28,6 @@ function getForecast(){
 function getCurrent(){
   var URI = `http://api.openweathermap.org/data/2.5/weather?units=imperial&q=${currentCity}&appid=${apiKey}`;
   var currentForecast = $("#current-forecast")
-
   $.ajax({
     url: URI,
     method: "GET"
@@ -35,6 +35,15 @@ function getCurrent(){
     searchHistory.push(currentCity); 
     localStorage.setItem("location", JSON.stringify(searchHistory));
     coords = response.coord;
+    var h2 =$("<h2>");
+    var cf = $("#current-forecast")
+    h2.text(response.name);
+    cf.append(h2);
+    cf.append($("<p>").text(response.weather[0].icon));
+    cf.append($("<p>").text(response.main.temp));
+    cf.append($("<p>").text(response.main.humidity));
+    cf.append($("<p>").text(response.wind.speed));
+    
     getUV();
   });
 }
@@ -56,14 +65,7 @@ function render(){
   historyEl.html("");
   var cities = JSON.parse(localStorage.getItem("location"))
   $.each(cities, function(i, city){
-      var li = $("<li>").text(city).addClass("list-group-item list-group-item-action");
-      historyEl.append(li)
-  })
+    var li = $("<li>").text(city).addClass("list-group-item list-group-item-action");
+    historyEl.append(li)
+    })
 }
-
-  
-
-
-
-
-
