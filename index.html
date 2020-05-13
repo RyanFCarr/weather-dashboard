@@ -14,68 +14,29 @@
     <div class="container-fluid">
         <div class="row bg-dark text-light text-center">
             <div class="col">
-                <h1 class="py-2">Weather Dashboard</h1>
+                <h2 class="py-2">Weather Dashboard</h2>
             </div>
         </div>
         <div id="searchBox" class="row mt-2">
-                    <div class="col-3 mt-2">
-                        <h5 class="card-title">Search for a City:</h5>
-                        <form id="search-form">
-                            <input type="text" id="form-search" />
-                            <button id="btnSearch" class="btn btn-primary" type="submit">Search</button>
-                        </form>
-                        <ul id="history" class="list-group pt-3"></ul>
+            <div class="col-3 mt-2">
+                <h5 class="card-title">Search for a City:</h5>
+                <form id="search-form">
+                    <input type="text" id="form-search" />
+                    <button id="btnSearch" class="btn btn-primary" type="submit">Search</button>
+                </form>
+                <ul id="history" class="list-group pt-3"></ul>
+            </div>
+            <div class="col-9">
+                <div class="card row">
+                    <div id="currentDay" class="col"></div>
+                </div>
+                <div class="row pt-2">
+                    <div class="col-12">
+                        <div class="row"></div>
+                        <div id="fiveDay" class="row"></div>
                     </div>
-                    <div class="col-9">
-                        <div class="card row">
-                            <div class="col">
-                                <h3>Charlotte</h3>
-                                <p>Temperature</p>
-                                <p>Humidity</p>
-                                <p>Wind Speed</p>
-                                <p>UV Index</p> 
-                            </div>
-                        </div>
-                        <div class="row pt-2">
-                            <div class="col-12">
-                                <div class="row">
-                                    <h5>Five Day Forecast:</h5>
-                                </div>
-                                <div class="row">
-                                    <div class="card-header col-2 mr-3 bg-primary text-light">
-                                        <h5>5/14/20</h5>
-                                        <p>Temperature</p>
-                                        <p>Wind</p>
-                                        <p>Humidity</p>
-                                    </div>
-                                    <div class="card-header col-2 mr-3 bg-primary text-light">
-                                        <h5>5/14/20</h5>
-                                        <p>Temperature</p>
-                                        <p>Wind</p>
-                                        <p>Humidity</p>
-                                    </div>
-                                    <div class="card-header col-2 mr-3 bg-primary text-light">
-                                        <h5>5/14/20</h5>
-                                        <p>Temperature</p>
-                                        <p>Wind</p>
-                                        <p>Humidity</p>
-                                    </div>
-                                    <div class="card-header col-2 mr-3 bg-primary text-light">
-                                        <h5>5/14/20</h5>
-                                        <p>Temperature</p>
-                                        <p>Wind</p>
-                                        <p>Humidity</p>
-                                    </div>
-                                    <div class="card-header col-2 mr-3 bg-primary text-light">
-                                        <h5>5/14/20</h5>
-                                        <p>Temperature</p>
-                                        <p>Wind</p>
-                                        <p>Humidity</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                </div>
+            </div>
         </div>
         <!--footer-->
         <div class="card row fixed-bottom bg-dark border-top border-secondary border-bottom-0"
