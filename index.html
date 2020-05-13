@@ -10,18 +10,28 @@
     <body style="background-image: url('./assets/noise-bg.png');background-repeat: repeat;">
         <!--container-->       
         <div class="container-fluid">
-            <div class="row">
+            <div class="row bg-dark text-light text-center ">
                 <div class="col">
-                    <h1 class="fixed-top bg-dark text-light text-center pb-3">Weather Dashboard</h1>
+                    <h1 class="py-2">Weather Dashboard</h1>
+                </div>
+            </div>
+            <div id="searchBox"class="row mt-2">
+                <div class="col ">
+                    <h5 class="card-title">Search for a City:</h5>
+                    <form id="search-form">
+                    <input type="text" id="form-search">
+                    <button id="btnSearch" class="btn btn-primary" type="submit">Search</button>
+                    </form>    
                 </div>
             </div>
             <div class="row">
-                <div class="col mt-5 pt-4">
-                    <h5 class="card-title">Search for a City:</h5>
-                    <input type="text" id="form-search">
-                    <button id="btnSearch" class="btn btn-primary" type="button">Search</button>   
-                </div>
+                <div class="col-2 mt-2">
+                    <ul id="history" class="list-group">
+                    </ul>
+                </div> 
             </div>
+            <div id="current-forecast" class="current"></div>
+            <div id="weekly-forecast" class="weekly"></div>
             <!--footer-->
             <div class="card row fixed-bottom bg-dark border-top border-secondary border-bottom-0" style="border-width: 5px !important;">
                 <div class="card-body text-center">
