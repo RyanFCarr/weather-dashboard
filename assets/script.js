@@ -89,7 +89,7 @@ function getForecast() {
     //Loop Here for Display
     for (var i = 0; i < response.list.length; i += 8) {
       var forecast = response.list[i];
-      var fiveDayDiv = `<div class="card-header col-2 mr-3 bg-primary text-light">
+      var fiveDayDiv = `<div class="card-header col-8 offset-2 offset-lg-0 col-lg-2 mr-3 bg-primary text-light">
                           <h5>${new Date(forecast.dt_txt).toLocaleDateString()}</h5>
                           <img src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}.png">
                           <p>Temp: ${Math.floor(forecast.main.temp)}&deg;</p>
