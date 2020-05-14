@@ -9,12 +9,25 @@ var icon;
 //Call for History
 renderHistory();
 
+//Check to get last stored.
+var lastStored = localStorage.getItem("last-Search")
+if (lastStored) {
+  currentCity = lastStored;
+  getCurrent();
+}
+
 //Click Event
 $("#search-form").submit(function (event) {
   currentCity = $("#form-search").val();
   getCurrent();
   event.preventDefault();
 });
+
+//Clickable History
+$(document).on("click", "li", function () {
+  currentCity = $(this).text()
+  getCurrent();
+})
 
 //Gets the UV Index
 function getUV() {
@@ -24,21 +37,35 @@ function getUV() {
     method: "GET"
   }).then(function (response) {
     uvIndex = response.value;
-    $("#uv").text(`UV Index: ${uvIndex}`)
+    var uvColor = "";
+    if(uvIndex >=8){
+      uvColor = "bg-danger"
+    }else if(uvIndex >=3){
+      uvColor = "bg-warning"
+    }else{
+      uvColor = "bg-succes"
+    }
+    $("#uv").html(`UV Index: <span class="${uvColor} p-1 rounded">${uvIndex}</span>`);
+    
     getForecast();
   });
 }
 
 //This gets the Current Forecast
 function getCurrent() {
+
   var URI = `http://api.openweathermap.org/data/2.5/weather?units=imperial&q=${currentCity}&appid=${apiKey}`;
-  var currentForecast = $("#current-forecast")
   $.ajax({
     url: URI,
     method: "GET"
   }).then(function (response) {
-    searchHistory.push(currentCity);
-    localStorage.setItem("location", JSON.stringify(searchHistory));
+    $("#currentDay").empty();
+    if (!searchHistory.find((element) => { return element === currentCity })) {
+      searchHistory.push(currentCity);
+      localStorage.setItem("location", JSON.stringify(searchHistory));
+      renderHistory();
+    }
+    localStorage.setItem("last-Search", currentCity);
     coords = response.coord;
     var img = `<img src="http://openweathermap.org/img/wn/${response.weather[0].icon}.png">`;
     var currentDay = `<h3 id="cityName">${response.name} (${new Date().toLocaleDateString()}) ${img}</h3>
@@ -58,10 +85,9 @@ function getForecast() {
     url: URI,
     method: "GET"
   }).then(function (response) {
-    var h5El = "<h5>Five Day Forecast:</h5>";
+    $("#fiveDay").empty();
     //Loop Here for Display
     for (var i = 0; i < response.list.length; i += 8) {
-      var d = new Date();
       var forecast = response.list[i];
       var fiveDayDiv = `<div class="card-header col-2 mr-3 bg-primary text-light">
                           <h5>${new Date(forecast.dt_txt).toLocaleDateString()}</h5>
