@@ -31,7 +31,7 @@ $(document).on("click", "li", function () {
 
 //Gets the UV Index
 function getUV() {
-  var URI = `http://api.openweathermap.org/data/2.5/uvi?appid=${apiKey}&lat=${coords.lat}&lon=${coords.lon}`;
+  var URI = `https://api.openweathermap.org/data/2.5/uvi?appid=${apiKey}&lat=${coords.lat}&lon=${coords.lon}`;
   $.ajax({
     url: URI,
     method: "GET"
@@ -54,7 +54,7 @@ function getUV() {
 //This gets the Current Forecast
 function getCurrent() {
 
-  var URI = `http://api.openweathermap.org/data/2.5/weather?units=imperial&q=${currentCity}&appid=${apiKey}`;
+  var URI = `https://api.openweathermap.org/data/2.5/weather?units=imperial&q=${currentCity}&appid=${apiKey}`;
   $.ajax({
     url: URI,
     method: "GET"
@@ -67,7 +67,7 @@ function getCurrent() {
     }
     localStorage.setItem("last-Search", currentCity);
     coords = response.coord;
-    var img = `<img src="http://openweathermap.org/img/wn/${response.weather[0].icon}.png">`;
+    var img = `<img src="https://openweathermap.org/img/wn/${response.weather[0].icon}.png">`;
     var currentDay = `<h3 id="cityName">${response.name} (${new Date().toLocaleDateString()}) ${img}</h3>
                       <p>Temperature: ${Math.floor(response.main.temp)}&deg;</p>
                       <p>Humidity: ${response.main.humidity}%</p>
@@ -80,7 +80,7 @@ function getCurrent() {
 
 //Returns 5 Day Forecast
 function getForecast() {
-  var URI = `http://api.openweathermap.org/data/2.5/forecast?units=imperial&q=${currentCity}&appid=${apiKey}`;
+  var URI = `https://api.openweathermap.org/data/2.5/forecast?units=imperial&q=${currentCity}&appid=${apiKey}`;
   $.ajax({
     url: URI,
     method: "GET"
@@ -91,7 +91,7 @@ function getForecast() {
       var forecast = response.list[i];
       var fiveDayDiv = `<div class="card-header col-8 offset-2 offset-lg-0 col-lg-2 mr-3 bg-primary text-light">
                           <h5>${new Date(forecast.dt_txt).toLocaleDateString()}</h5>
-                          <img src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}.png">
+                          <img src="https://openweathermap.org/img/wn/${forecast.weather[0].icon}.png">
                           <p>Temp: ${Math.floor(forecast.main.temp)}&deg;</p>
                           <p>Humidity: ${forecast.main.humidity}%</p>
                         </div>`
