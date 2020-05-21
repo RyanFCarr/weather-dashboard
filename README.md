@@ -1,6 +1,7 @@
 # weather-dashboard
-A simple app to retrieve weather from an API
+A simple app to retrieve weather from an API.
 
+# Description
 This weather App makes multiple API calls to the 
 http://openweathermap.org site, providing the following information.
 
@@ -23,7 +24,10 @@ http://openweathermap.org site, providing the following information.
 Additionally, this app will remember and display the last searched
 location(s).
 
+## Authors
+* **Ryan Carr** - [RyanFCarr](https://github.com/RyanFCarr)
+
 ## Demo:
-Here is the deployed version: [code-quiz](https://ryanfcarr.github.io/weather-dashboard/)  
+Here is the deployed version: [weather-dashboard](https://ryanfcarr.github.io/weather-dashboard/)  
 
 
