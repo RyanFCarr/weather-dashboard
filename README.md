@@ -23,6 +23,7 @@ http://openweathermap.org site, providing the following information.
 Additionally, this app will remember and display the last searched
 location(s).
 
-Link to deployed Site:
-https://ryanfcarr.github.io/weather-dashboard/
+## Demo:
+Here is the deployed version: [code-quiz](https://ryanfcarr.github.io/weather-dashboard/)  
+
 
