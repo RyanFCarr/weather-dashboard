@@ -24,5 +24,5 @@ Additionally, this app will remember and display the last searched
 location(s).
 
 Link to deployed Site:
-https://ryanfcarr.github.io/weather-dashboard/ls
+https://ryanfcarr.github.io/weather-dashboard/
 
