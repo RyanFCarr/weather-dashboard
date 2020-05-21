@@ -1,6 +1,9 @@
 # weather-dashboard
 A simple app to retrieve weather from an API.
 
+![weather-dashboard](https://user-images.githubusercontent.com/61035701/82515727-f2824280-9ae6-11ea-8eba-0c7e4f08ee97.jpg)
+
+
 # Description
 This weather App makes multiple API calls to the 
 http://openweathermap.org site, providing the following information.
